@@ -1,0 +1,12 @@
+{
+  "name": "world-time-app",
+  "version": "1.0.0",
+  "description": "Paprasta aplikacija, rodanti laiką visuose žemynuose",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
