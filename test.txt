@@ -1,0 +1,3 @@
+Atnaujinta.
+
+Parašyk, ką šiame `test.txt` faile nori turėti (pvz., testinius duomenis, komandos eilutės išvestį, konfigūraciją ar užduoties aprašą), ir sugeneruosiu tikslų turinį.
