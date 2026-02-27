@@ -7,7 +7,6 @@ const PORT = 3000;
 // Servuoti statinius failus
 app.use(express.static(__dirname));
 
-// Pagrindinis route
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
