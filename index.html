@@ -104,6 +104,10 @@
     </div>
 
     <script>
+        if (!sessionStorage.getItem('loggedIn')) {
+            window.location.href = '/login.html';
+        }
+
         const continents = [
             { name: 'Europa', city: 'Vilnius', timezone: 'Europe/Vilnius', emoji: '🇪🇺' },
             { name: 'Azija', city: 'Tokijas', timezone: 'Asia/Tokyo', emoji: '🇯🇵' },

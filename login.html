@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisijungimas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .login-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: border-color 0.2s;
+        }
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .hint {
+            font-size: 0.75em;
+            color: #888;
+            margin-top: 4px;
+        }
+        .error {
+            font-size: 0.85em;
+            color: #c0392b;
+            margin-top: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h1>🔐 Prisijungimas</h1>
+        <p class="subtitle">Įveskite savo prisijungimo duomenis</p>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Vartotojo vardas</label>
+                <input type="text" id="username" name="username" autocomplete="username" required>
+                <div class="hint">Min. 3 simboliai</div>
+                <div class="error" id="usernameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Slaptažodis</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+                <div class="hint">Min. 8 simboliai, didžioji raidė, skaičius ir specialus simbolis</div>
+                <div class="error" id="passwordError"></div>
+            </div>
+            <button type="submit">Prisijungti</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+
+        // Tik išvaizdai – rodo standartus, bet realiai nieko netikrina
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            sessionStorage.setItem('loggedIn', 'true');
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>
